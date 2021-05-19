@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@media only screen and (max-width: 800px) { 
+@media only screen and (max-width: 1000px) {
     #main-img{
         display:none;
     }
@@ -75,7 +75,7 @@ header{
     align-items:center;
     /* padding-top:2%; */
     /* padding-bottom:2%; */
-    
+
 }
 .social-links li{
     display: inline-block;
@@ -83,61 +83,91 @@ header{
     padding: 0px 10px;
     margin:0px 5px;
     /* border:1px solid rgb(98, 153, 216); */
-  
 }
+.social-links li a img{
+    width:1.7rem;
+    height:auto;
+}
+
+.social-links li a img:hover{
+    transform:scale(1.3);
+    box-shadow: 1px;
+}
+
 .btn{
     color:aqua;
     font-size:1.5vh;
 }
 .mainimg{
-    width: 25vw;
-    min-width: 20vw;
-    height: auto;
+    /* width: 20vw; */
+    max-width: 25vw;
+    /* min-width: 20vw; */
+    min-height: 20vh;
+    max-height: auto;
     padding: 2rem 2rem;
     margin:1rem 1 rem;
 }
-
+.text-container{
+ display:flex;
+ flex-direction:column;
+}
 .text-container h3{
     color: grey;
-    Font-size:1.5em;
-    font-weight: 200;
+    font-size:1.3rem;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 900 !important;
     padding-bottom: 0.4rem;
     letter-spacing: 0.1em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-}
-
-.text-container h1{
-    padding-top:0.4rem;
-    padding-bottom:0.4rem;
-    color: antiquewhite;
-    Font-size:5vw;
-    /* line-height:3rem; */
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    font-family: 'Sacramento', cursive;
 }
 
 .text-container h5{
     color: grey;
-    font-size: 1.3em;
-    font-weight: 200;
-    padding-top: 0.4vw;
-    padding-bottom: 0.7vw;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding-top: 0.4rem;
+    padding-bottom: 0.7rem;
     letter-spacing: 0.2em;
 }
 .text-container h4{
     color: grey;
-    font-size: 1em;
+    font-size: 1.3rem;
     font-weight: 200;
     padding-top: 10px;
     padding-bottom: 20px;
-    letter-spacing: 0.2em;
 }
+
+
+
+.main-name{
+    padding-top:0.4rem;
+    padding-bottom:0.4rem;
+    color:rgba(255, 235, 215, 0.7) ;
+    font-size:4rem;
+    letter-spacing: 0.1rem;
+    font-weight: extra-bold;
+    /* font-family: 'Sacramento', cursive; */
+    font-family: "Montserrat",sans-serif;
+
+}
+
+
+
+
+.connect-to-me{
+    display:flex;
+    flex-direction: row;
+}
+.connect-to-me a:hover{
+    color:orange;
+    transition:color 1s ease-in-out;
+}
+
 .email{
     color: yellowgreen;
-    letter-spacing: 0em;
+    padding-left:20px;
+    letter-spacing: 0.2em;
 }
 .lik-git li {
     display: inline-block;
@@ -159,20 +189,56 @@ header{
 }
 
 
-@media only screen and (max-width: 800px) { 
-    .text-container h1{
-        padding-top:0.4rem;
-        padding-bottom:0.4rem;
+@media only screen and (max-width: 1000px) {
+    .text-container{
+        justify-content: center;
+    }
+    .main-name{
         color: antiquewhite;
-        Font-size:3em;
+        Font-size:2rem;
         /* line-height:3rem; */
         letter-spacing: 0.1em;
-        font-weight: 600;
-        font-family: 'Sacramento', cursive;
+        font-weight: 300;
+        font-family: "Montserrat",sans-serif;
+    }
+    .text-container h3{
+      font-size:1rem;
+    }
+    .text-container h5{
+      font-size:1rem;
+    }
+    .text-container h4{
+      font-size:1rem;
+    }
+    .email{
+      padding:0px;
+    }
+    .social-links li a img{
+        width:1.7rem;
+        height:auto;
+    }
+    .connect-to-me{
+        display:flex;
+        flex-direction: column;
     }
 
 }
+@media only screen and (max-width: 500px) {
 
+    .text-container{
+        justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .connect-to-me{
+        display:flex;
+        flex-direction: column;
+    }
+    .social-links li a img{
+        width:3 rem;
+        height:auto;
+    }
+}
 
 
 /* external css */
@@ -183,14 +249,14 @@ header{
     bottom: 0;
     left: 0;
     margin: auto;
-    
-    width :34px;
-    height: 55px;
+
+    width :24px;
+    height: 35px;
   }
   .mousey {
     width: 3px;
-    padding: 10px 15px;
-    height: 35px;
+    padding: 5px 10px;
+    height: 25px;
     border: 2px solid #fff;
     border-radius: 25px;
     opacity: 0.75;
