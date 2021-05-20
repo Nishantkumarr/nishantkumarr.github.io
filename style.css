@@ -24,6 +24,7 @@ li,a,button{
     text-decoration: none;
 
 }
+
 .logo{
   width:auto;
   height: 5rem;
@@ -58,7 +59,7 @@ header{
     transition:all 0.2s ease 0s;
 }
 .nav-links li a:hover{
-    color:beige;
+    color:rgb(247, 225, 193);
 }
 
 
@@ -92,8 +93,8 @@ header{
 .social-links li{
     display: inline-block;
     letter-spacing:0.1rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
     margin-right:5px;
     /* border:1px solid rgb(98, 153, 216); */
 }
@@ -393,6 +394,7 @@ header{
 
  @media only screen and (max-width: 500px) {
       .about-section{
+        max-height: 100vh;
         padding:0px 0px 0px 0px;
         margin:0px 0px 0px 0px;
       }
@@ -408,15 +410,15 @@ header{
 /* skills section */
 .skills-section{
   position:relative !important;
-  min-height: 40vh;
-  max-height: 60vh;
+  min-height: 60vh;
+  max-height: 70vh;
   max-width: 60vw;;
   padding-top:2rem;
   padding-bottom:2rem;
   margin:auto;
   display:flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .skills-section h1{
@@ -472,25 +474,46 @@ header{
 .tech-know{
   display: flex;
   justify-content:space-evenly;
+  padding:0.1rem;
   align-items: center;
-  min-width: 20vw;
+  min-width: 25vw;
   max-width:27vw;
 } 
-/* 
+
+
+@media only screen and (max-width: 950px) {
+  .techi{
+    width:1.5rem;
+    height:auto;
+  }
+}
 @media only screen and (max-width: 850px) {
-.skill-tech{
-  flex-direction: column;
-  justify-content: 
-}
+    .skill-tech{
+    flex-direction: column;
+    justify-content: center;
+    padding:0px;
+    margin:1.5rem;
+  }  
+  .tech-know{
+    padding:0.8rem;
+    min-width: 50vw;
+  }
+  .tech h1{
+    max-width: 50vw;
+  }
 
 }
 
-/*
+@media only screen and (max-width: 550px) {
+    .skills-section{
+      max-width:100vw;
+      margin:2rem 2rem;
+    }
+    .skill-table{
+      min-width:100vw;
+    }
+    .tech-know .one{
+      min-width:70vw;
+    }
 
-
-
-
- 
-
-
-*/ */
+  }
