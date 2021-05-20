@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@media only screen and (max-width: 1000px) {
-    #main-img{
-        display:none;
-    }
-    #social-link{
+@media only screen and (max-width: 800px) {
+    .mainimg{
         display:none;
     }
 }
@@ -63,12 +60,17 @@ header{
 
 
 /* hero section code */
+.hero-section{
+  min-height: 100vh;
+}
 .container{
     position:relative;
     display:flex;
     flex-direction:row;
     justify-content:center;
-    min-height: 80vh;
+    min-height: 85vh;
+    max-height: 90vh;
+    min-width:70vw;
     /* max-width: 90%; */
     /* margin-top: 1%; */
     /* margin-bottom:1%; */
@@ -98,11 +100,14 @@ header{
     color:aqua;
     font-size:1.5vh;
 }
+.image-container{
+  flex-shrink: 1;
+}
 .mainimg{
     /* width: 20vw; */
-    max-width: 25vw;
+    max-width: 24rem;
     /* min-width: 20vw; */
-    min-height: 20vh;
+    min-height: 20rem;
     max-height: auto;
     padding: 2rem 2rem;
     margin:1rem 1 rem;
@@ -110,6 +115,7 @@ header{
 .text-container{
  display:flex;
  flex-direction:column;
+
 }
 .text-container h3{
     color: grey;
@@ -173,24 +179,20 @@ header{
     display: inline-block;
 
 }
-.rot{
-    position:absolute !important;
-    transform:rotate(270deg);
-    padding-bottom: 1vh;
-    padding-left:2vw;
-    margin: auto;
-}
-.notrot{
-    position:absolute !important;
-    padding-top: 3vh;
-    padding-left:7rem;
-    font-size: 1rem;
 
-}
 
 
 @media only screen and (max-width: 1000px) {
+    .container{
+      min-width: 70vw !important;
+      min-height: 75vh;
+      max-height: 90vh;
+      }
+      .imgage-container{
+        max-width:25vw;
+      }
     .text-container{
+      min-width: 30vw;
         justify-content: center;
     }
     .main-name{
@@ -202,7 +204,7 @@ header{
         font-family: "Montserrat",sans-serif;
     }
     .text-container h3{
-      font-size:1rem;
+      font-size:2rem;
     }
     .text-container h5{
       font-size:1rem;
@@ -235,7 +237,7 @@ header{
         flex-direction: column;
     }
     .social-links li a img{
-        width:3 rem;
+        width:1.2rem;
         height:auto;
     }
 }
@@ -277,3 +279,73 @@ header{
     10% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(15px); opacity: 0;}
   }
+
+
+ /* about section css */
+
+ .about-section{
+   position:relative;
+   min-height: 60vh;
+   max-height: 100vh;
+   padding:2.5rem;
+   margin:2.5rem;
+ }
+ .about{
+   min-height: 40vh;
+   max-width:75vw;
+   margin:auto;
+   padding:auto;
+   position:relative;
+   display:flex;
+   flex-direction:row;
+   justify-content:space-around;
+   align-items:center;
+ }
+
+ .about-topic{
+   display: flex;
+ }
+.main-about-topic{
+    justify-content: flex-end;
+    font-size: 3rem;
+    font-family: 'Sacramento', cursive;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.4);
+}
+ .about-para{
+   padding:15px 15px;
+   max-width: 50vw;
+   justify-content: center;
+ }
+ .about-para p{
+   font-size: 1rem;
+   color:rgba(255, 215, 243, 0.5);
+   padding:1rem,1rem;
+ }
+
+
+ @media only screen and (max-width: 1000px) {
+      .about{
+        flex-direction:column;
+      }
+      .about-para{
+        padding:15px 15px;
+        max-width: 70vw;
+      }
+ }
+
+ @media only screen and (max-width: 500px) {
+      .about-section{
+        padding:0px 0px 0px 0px;
+        margin:0px 0px 0px 0px;
+      }
+      .about{
+        flex-direction:column;
+      }
+      .about-para{
+        max-width: 80vw;
+        justify-content: center;
+      }
+ }
+ 
+/* skills section */
