@@ -24,6 +24,10 @@ li,a,button{
     text-decoration: none;
 
 }
+.logo{
+  width:auto;
+  height: 5rem;
+}
 
 header{
     display:flex;
@@ -61,14 +65,20 @@ header{
 
 /* hero section code */
 .hero-section{
-  min-height: 100vh;
+  min-height: 90vh;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  padding:2rem;
+  margin:1rem;
 }
 .container{
     position:relative;
     display:flex;
     flex-direction:row;
     justify-content:center;
-    min-height: 85vh;
+    min-height: 70vh;
     max-height: 90vh;
     min-width:70vw;
     /* max-width: 90%; */
@@ -82,17 +92,20 @@ header{
 .social-links li{
     display: inline-block;
     letter-spacing:0.1rem;
-    padding: 0px 10px;
-    margin:0px 5px;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    margin-right:5px;
     /* border:1px solid rgb(98, 153, 216); */
 }
+
+
 .social-links li a img{
     width:1.7rem;
     height:auto;
 }
 
 .social-links li a img:hover{
-    transform:scale(1.3);
+    transform:scale(2);
     box-shadow: 1px;
 }
 
@@ -119,8 +132,8 @@ header{
 }
 .text-container h3{
     color: grey;
-    font-size:1.3rem;
-    font-family: "Montserrat",sans-serif;
+    font-size:1.5rem;
+    font-family: 'Sacramento', cursive;
     font-weight: 900 !important;
     padding-bottom: 0.4rem;
     letter-spacing: 0.1em;
@@ -130,32 +143,30 @@ header{
 .text-container h5{
     color: grey;
     font-family: "Montserrat",sans-serif;
-    font-size: 1.3rem;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 300;
     padding-top: 0.4rem;
     padding-bottom: 0.7rem;
-    letter-spacing: 0.2em;
 }
 .text-container h4{
     color: grey;
     font-size: 1.3rem;
     font-weight: 200;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 }
 
 
 
 .main-name{
-    padding-top:0.4rem;
-    padding-bottom:0.4rem;
+    padding-top:0.2rem;
+    padding-bottom:0.2rem;
     color:rgba(255, 235, 215, 0.7) ;
     font-size:4rem;
     letter-spacing: 0.1rem;
-    font-weight: extra-bold;
+    font-weight: 200;
     /* font-family: 'Sacramento', cursive; */
-    font-family: "Montserrat",sans-serif;
-
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
@@ -183,7 +194,11 @@ header{
 
 
 @media only screen and (max-width: 1000px) {
-    .container{
+  .mainimg{
+    min-width:14rem;
+    max-width:18rem;
+  }  
+  .container{
       min-width: 70vw !important;
       min-height: 75vh;
       max-height: 90vh;
@@ -204,7 +219,7 @@ header{
         font-family: "Montserrat",sans-serif;
     }
     .text-container h3{
-      font-size:2rem;
+      font-size:1.2rem;
     }
     .text-container h5{
       font-size:1rem;
@@ -286,12 +301,13 @@ header{
  .about-section{
    position:relative;
    min-height: 60vh;
-   max-height: 100vh;
-   padding:2.5rem;
-   margin:2.5rem;
+   max-height: 80vh;
+   padding:2rem;
+   margin:2rem;
  }
+
  .about{
-   min-height: 40vh;
+   min-height: 50vh;
    max-width:75vw;
    margin:auto;
    padding:auto;
@@ -301,6 +317,33 @@ header{
    justify-content:space-around;
    align-items:center;
  }
+
+
+
+ /* .about-me{
+   position: absolute;
+   margin-top:-80px;
+   width: 15vw;
+   font-size: 2.5rem;
+   font-weight: 200px;
+   text-transform: uppercase;
+}
+
+
+
+ .light{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: transparent;
+  text-shadow: 0 0 3px rgba(241, 237, 237, 0.733);
+  z-index:1;
+}
+.dark{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  z-index:2;
+  font-weight: 200;
+  background:transparent;
+  text-transform:uppercase;
+} */
 
  .about-topic{
    display: flex;
@@ -319,9 +362,12 @@ header{
  }
  .about-para p{
    font-size: 1rem;
-   color:rgba(255, 215, 243, 0.5);
-   padding:1rem,1rem;
- }
+   color:rgba(128,128,128,0.9);
+   /* padding:1rem,1rem; */
+   letter-spacing:0.2rem;
+   line-height: 1.6rem;
+   font-family: 'Source Sans Pro', sans-serif;
+   }
 
 
  @media only screen and (max-width: 1000px) {
@@ -332,6 +378,17 @@ header{
         padding:15px 15px;
         max-width: 70vw;
       }
+      .about-section{
+        border:0px;
+      }
+      .about-me{
+        display:none;
+      }
+      .about-para p{
+        line-height: 1.3rem;
+
+      }
+
  }
 
  @media only screen and (max-width: 500px) {
@@ -349,3 +406,91 @@ header{
  }
  
 /* skills section */
+.skills-section{
+  position:relative !important;
+  min-height: 40vh;
+  max-height: 60vh;
+  max-width: 60vw;;
+  padding-top:2rem;
+  padding-bottom:2rem;
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skills-section h1{
+  font-size: 3rem;
+  font-family: 'Sacramento', cursive;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.4);
+}
+
+
+.skill-table{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-tech{
+  display:inline-flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  min-width: 50vw;
+  max-width: 55vw;
+  padding-top:2rem;
+  padding-bottom:2rem;
+  margin:auto;
+}
+
+
+.tech img{
+  padding:10px;
+  margin:5px;
+}
+.tech h1{
+  font-size: 1.1rem;
+  letter-spacing:0.1px;
+  font-family: "Montserrat",sans-serif;
+  color: rgba(255,255,255,0.4);
+  max-width: 25vw;
+}
+.techi{
+  width:2rem;
+  height:auto;
+  transition: all .2s ease-in-out; 
+}
+.techi:hover{
+  transform:scale(2);
+}
+
+
+.tech-know{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  min-width: 20vw;
+  max-width:27vw;
+} 
+/* 
+@media only screen and (max-width: 850px) {
+.skill-tech{
+  flex-direction: column;
+  justify-content: 
+}
+
+}
+
+/*
+
+
+
+
+ 
+
+
+*/ */
