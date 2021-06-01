@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
 
 @media only screen and (max-width: 800px) {
     .mainimg{
@@ -10,6 +13,7 @@
   .nav-links{
       display:none;
   }
+  
 }
 
 *{
@@ -85,10 +89,14 @@ header{
 }
 
 .nav-links li a{
-    transition:all 0.2s ease 0s;
+    transition:0.3s;
+}
+
+nav-links li a {
+    font-size:1.5rem !important;
 }
 .nav-links li a:hover{
-    color:rgb(247, 225, 193);
+    color:#e2a165;
 }
 
 
@@ -287,6 +295,7 @@ header{
         width:1.2rem;
         height:auto;
     }
+
 }
 
 
@@ -359,8 +368,10 @@ header{
 .main-about-topic{
     justify-content: flex-end;
     font-size: 3rem;
-    font-family: 'Sacramento', cursive;
+    font-family: 'Dancing Script', cursive;
     letter-spacing: 4px;
+    font-weight: 300;
+
     color: rgba(255,255,255,0.4);
 }
  .about-para{
@@ -370,7 +381,7 @@ header{
  }
  .about-para p{
    font-size: 1rem;
-   color:rgba(128,128,128,0.9);
+   color:#949596;
    /* padding:1rem,1rem; */
    line-height: 1.6rem;
    font-weight:100;
@@ -434,10 +445,11 @@ header{
 }
 
 
-.skills-section h1{
+.skill-head h1{
   font-size: 3rem;
-  font-family: 'Sacramento', cursive;
+  font-family: 'Dancing Script', cursive;
   letter-spacing: 4px;
+  font-weight: 300;
   color: rgba(255,255,255,0.4);
 }
 
@@ -457,9 +469,8 @@ header{
   align-items: center;
   min-width: 50vw;
   max-width: 55vw;
-  padding-top:2rem;
-  padding-bottom:2rem;
-  margin:auto;
+  margin-top:2rem;
+  margin-bottom:2rem;
 }
 
 
@@ -521,12 +532,20 @@ header{
     .skills-section{
       max-width:100vw;
       margin:2rem 2rem;
+      min-height:50vh;
+      max-height:60vh;
     }
     .skill-table{
       min-width:100vw;
     }
     .tech-know .one{
       min-width:70vw;
+    }
+    .company{
+      min-height:10vh;
+      max-height:15vh;
+      margin:0 !important;
+      padding:0!important;
     }
 
   }
@@ -554,9 +573,9 @@ header{
 
 .expHead{
   font-size: 3rem;
-  font-family: 'Sacramento', cursive;
-  letter-spacing: 6px;
-  letter-spacing: 7px;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 4px;
+  font-weight: 300;
   color: rgba(255,255,255,0.4);
   padding: 1rem 1rem;
   margin:1rem 1rem;
@@ -568,10 +587,13 @@ header{
   flex-direction:column;
 }
 .company{
-  min-height: 25vh;
-  min-width:60vw;
-  margin:auto;
+  min-height: 20vh;
+  min-width:70vw;
   padding:auto;
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding-top:1rem;
+  padding-bottom: 1rem;
   position:relative;
   display:flex;
   flex-direction:row;
@@ -604,11 +626,10 @@ header{
 
 
 .exp-para ul li{
-  font-size: 0.8rem;
-  color:rgba(128,128,128,0.9);
-  /* padding:1rem,1rem; */
-  letter-spacing:0.2rem;
-  line-height: 1.6rem;
+  font-size: 0.9rem;
+  color: #949596;
+  line-height: 1.5rem;
+  font-weight: 100;
   font-family: 'Source Sans Pro', sans-serif;
   align-items:center;
   /* text-align: center; */
@@ -656,6 +677,14 @@ header{
   .company{
     min-height:20vh;
   }
+  .main-company-topic{
+    font-size:1rem;
+  }
+  .company-topic h3 {
+    font-size: 0.9rem;
+  }
+
+
 }
 
 
@@ -679,9 +708,9 @@ header{
 
 .projHead{
   font-size: 3rem;
-  font-family: 'Sacramento', cursive;
-  letter-spacing: 6px;
-  letter-spacing: 7px;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 4px;
+  font-weight: 300;
   color: rgba(255,255,255,0.4);
   padding: 1rem 1rem;
   margin:1rem 1rem;
@@ -693,8 +722,8 @@ header{
   flex-direction:column;
 }
 .project{
-  min-height: 30vh;
-  min-width:60vw;
+  min-height:35vh;
+  min-width:70vw;
   margin:auto;
   padding:auto;
   position:relative;
@@ -703,7 +732,10 @@ header{
   justify-content:space-around;
   align-items:center;
 }
-
+.project.not{
+  flex-direction:row-reverse !important;
+  text-decoration-color: red;
+}
 
 .project-topic{
   display:flex;
@@ -730,11 +762,10 @@ header{
 }
 
 .explain-proj ul li{
-  font-size: 0.8rem;
-  color:rgba(128,128,128,0.9);
-  /* padding:1rem,1rem; */
-  letter-spacing:0.2rem;
-  line-height: 1.6rem;
+  font-size: 0.9rem;
+  color: #949596;
+  line-height: 1.5rem;
+  font-weight: 100;
   font-family: 'Source Sans Pro', sans-serif;
   align-items:center;
   /* text-align: center; */
@@ -783,7 +814,9 @@ header{
   padding:1.4rem 1.4rem;
 }
 
-
+.proj-date{
+  font-size: 1.3rem;
+}
 
 .project-topic:hover{
   transform:scale(1.2);
@@ -840,6 +873,9 @@ transition:1s;
   .project{
       flex-direction: column;
   }
+  .project.not{
+    flex-direction: column !important;
+  }
   .explain-proj ul li{
     text-align:center;
     list-style:none;
@@ -847,18 +883,36 @@ transition:1s;
 
 }
 
-
-@media only screen and (max-width: 600px) {
-  .projects-section{
-    min-height: 80vh;
-    justify-content: space-between;
-
-  }
+@media only screen and (max-width: 800px) {
   .explain-proj{
     display: none;
   }
+}
+@media only screen and (max-width: 600px) {
+  .projects-section{
+    min-height: 90vh;
+    justify-content: space-between;
+
+  }
+
   .project{
     min-height:20vh;
+  }
+  .project.not{
+    min-height:20vh;
+  }
+  .main-project-topic{
+    font-size: 1rem !important;
+  }
+
+  .proj-date{
+    font-size: 0.8rem !important;
+  }
+  .project-topic{
+    padding:2rem;
+  }
+  .see-more-proj span{
+    font-size:0.8rem;
   }
 }
 
