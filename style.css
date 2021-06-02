@@ -12,6 +12,11 @@ body{
 }
 
 
+
+
+
+
+
 /* scrollbar */
 /* width */
 ::-webkit-scrollbar {
@@ -52,13 +57,12 @@ nav{
     padding:30px 10%;
 
 }
-
-.logo{
-    font-family: "Montserrat",sans-serif;
-    font-weight: 200px;
-    color: antiquewhite;
-
+nav a{
+  font-size:1rem !important;
+  font-weight:bold !important;
 }
+
+
 
 .nav-links{
     list-style:none;
@@ -76,6 +80,7 @@ nav{
 
 .nav-links li a {
     font-size:1rem !important;
+    font-weight:bold !important;
 }
 .nav-links li a:hover{
     color:#e2a165;
@@ -184,30 +189,31 @@ nav{
 
 }
 .text-container h3{
-    color: grey;
     font-size:1.5rem;
     font-family: 'Sacramento', cursive;
     font-weight: 900 !important;
     padding-bottom: 0.4rem;
     letter-spacing: 0.1em;
+    color:#e2a165;
+
 
 }
 
-.text-container h5{
+.text-container h4{
     color: grey;
     font-family: "Montserrat",sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: bold !important;
     padding-top: 0.4rem;
     padding-bottom: 0.7rem;
 }
-.text-container h4{
+/* .text-container h4{
     color: grey;
     font-size: 1.3rem;
     font-weight: 200;
     padding-top: 1rem;
     padding-bottom: 3rem;
-}
+} */
 
 
 
@@ -495,7 +501,7 @@ nav{
   font-size: 1.1rem;
   letter-spacing:0.1px;
   font-family: "Montserrat",sans-serif;
-  color: rgba(255,255,255,0.4);
+  color:#949596;
   max-width: 25vw;
 }
 .techi{
@@ -639,7 +645,7 @@ nav{
 
 
 .exp-para ul li{
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #949596;
   line-height: 1.5rem;
   font-weight: 100;
@@ -781,7 +787,7 @@ nav{
 }
 
 .explain-proj p{
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #949596;
   line-height: 1.5rem;
   font-weight: 100;
@@ -852,7 +858,7 @@ nav{
 }
 
 
-.see-more-proj{
+.see-more-proj {
 display:inline-flex;
 flex-direction:column;
 justify-content: center;
@@ -860,10 +866,14 @@ align-items: center;
 margin-top:20px;
 padding:10px;
 transition:1s;
+font-weight: bold;
 }
-
-.see-more-proj:hover{
-  transform:scale(1.2);
+.see-more-proj img{
+  background: transparent;
+}
+.see-more-proj span:hover{
+  background-color:#fafafa;
+  color:#24252A;
 }
 
 
@@ -942,8 +952,8 @@ contact-form */
 
 .Contactme{
   min-width:98vw;
-  min-height:100vh;
-  margin:auto;
+  min-height:80vh;
+  margin:1rem 1rem;
   padding:auto;
   display:flex;
   flex-direction:column;
@@ -951,7 +961,77 @@ contact-form */
   align-items: center;
 }
 
-.connectform{
+.contactform{
  width:75vw;
- height:auto;
+ height:30vh;
+ display:flex;
+flex-direction:column;
+justify-content:space-around;
+align-items:center;
 }
+
+.contactform h3{
+  font-size:3rem;
+  font-weight:800;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #E9DFD2;
+}
+
+.contactform p{
+  text-align:center;
+  font-size: 0.9rem;
+  color: #949596;
+  line-height: 1.5rem;
+  font-weight: 100;
+  font-family: 'Source Sans Pro', sans-serif;
+  align-items: center;
+}
+
+.contactform a h1{
+  color:#e2a165;
+  padding:0.8rem 0.8rem;
+  margin:1rem 1rem;
+  border:1px solid #e2a165;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size:1rem;
+  transition:0.6s;
+}
+.contactform a h1:hover{
+    background-color: #e2a165;
+    color: #fafafa;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .contactform h3{
+    font-size:1.8rem;
+    
+    
+  }
+}
+
+
+
+/* wave css */
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+  background-color: transparent;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+
