@@ -1,20 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-
-
-@media only screen and (max-width: 800px) {
-    .mainimg{
-        display:none;
-    }
-}
-@media only screen and (max-width: 500px) {
-  .nav-links{
-      display:none;
-  }
-  
-}
 
 *{
     margin: 0;
@@ -48,8 +32,6 @@ body{
 
 
 
-
-
 li,a,button{
     font-family: "Montserrat",sans-serif;
     font-weight: 500;
@@ -63,7 +45,7 @@ li,a,button{
   height: 5rem;
 }
 
-header{
+nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -92,14 +74,45 @@ header{
     transition:0.3s;
 }
 
-nav-links li a {
-    font-size:1.5rem !important;
+.nav-links li a {
+    font-size:1rem !important;
 }
 .nav-links li a:hover{
     color:#e2a165;
+} 
+.icon-rsme{
+  display:none;
+}
+.icon-rsme img{
+  max-width:3rem !important;height:auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .nav-links{
+    display:none;
+  }
+  .text-rsme{
+    display:none;
+  }
+  .icon-rsme{
+    display:initial;
+  }
+  
+
 }
 
 
+@media only screen and (max-width: 800px) {
+  .mainimg{
+      display:none;
+  }
+}
+@media only screen and (max-width: 500px) {
+.nav-links{
+    display:none;
+}
+
+}
 
 /* hero section code */
 .hero-section{
@@ -588,7 +601,7 @@ nav-links li a {
 }
 .company{
   min-height: 20vh;
-  min-width:70vw;
+  min-width:60vw;
   padding:auto;
   margin-top:2rem;
   margin-bottom:2rem;
@@ -632,8 +645,8 @@ nav-links li a {
   font-weight: 100;
   font-family: 'Source Sans Pro', sans-serif;
   align-items:center;
-  /* text-align: center; */
-  list-style: none;
+  text-align: left;
+  /* list-style: none; */
 }
 
 
@@ -655,10 +668,16 @@ nav-links li a {
 }
 
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1340px) {
   .company{
       flex-direction: column;
   }
+  .company-topic{
+    min-width:50vw;
+    padding:1rem 1rem;
+    margin:1rem 1rem;
+  }
+  
   .exp-para ul li{
     text-align:center;
     list-style:none;
@@ -675,7 +694,7 @@ nav-links li a {
     display: none;
   }
   .company{
-    min-height:20vh;
+    min-height:15vh;
   }
   .main-company-topic{
     font-size:1rem;
@@ -722,10 +741,10 @@ nav-links li a {
   flex-direction:column;
 }
 .project{
-  min-height:35vh;
+  min-height:20vh;
   min-width:70vw;
-  margin:auto;
   padding:auto;
+  margin:2rem 2rem;
   position:relative;
   display:flex;
   flex-direction:row;
@@ -761,7 +780,7 @@ nav-links li a {
 
 }
 
-.explain-proj ul li{
+.explain-proj p{
   font-size: 0.9rem;
   color: #949596;
   line-height: 1.5rem;
@@ -869,14 +888,14 @@ transition:1s;
 
 
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1340px) {
   .project{
       flex-direction: column;
   }
   .project.not{
     flex-direction: column !important;
   }
-  .explain-proj ul li{
+  .explain-proj p{
     text-align:center;
     list-style:none;
 }
@@ -935,153 +954,4 @@ contact-form */
 .connectform{
  width:75vw;
  height:auto;
-}
-
-/* externalcss */
-body, button, input {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-}
-
-.screen {
-  position: relative;
-  background: #3e3e3e;
-  border-radius: 15px;
-  min-width:40vw;
-}
-
-.screen:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  bottom: 0;
-  border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
-  z-index: -1;
-}
-
-
-
-.screen-body {
-  display: flex;
-}
-
-.screen-body-item {
-  flex: 1;
-  padding: 50px;
-}
-
-.screen-body-item.left {
-  display: flex;
-  flex-direction: column;
-}
-
-.app-title {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  color: rgba(255, 235, 215, 0.7);
-  font-size: 26px;
-}
-
-.app-title:after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 25px;
-  height: 4px;
-  background: rgba(255, 235, 215, 0.7);
-}
-
-.app-contact {
-  margin-top: auto;
-  font-size: 8px;
-  color: #888;
-}
-
-.app-form-group {
-  margin-bottom: 15px;
-}
-
-.app-form-group.message {
-  margin-top: 40px;
-}
-
-.app-form-group.buttons {
-  margin-bottom: 0;
-  text-align: right;
-}
-
-.app-form-control {
-  width: 100%;
-  padding: 10px 0;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #666;
-  color: #ddd;
-  font-size: 14px;
-  text-transform: uppercase;
-  outline: none;
-  transition: border-color .2s;
-}
-
-.app-form-control::placeholder {
-  color: #666;
-}
-
-.app-form-control:focus {
-  border-bottom-color: #ddd;
-}
-
-.app-form-button {
-  background: none;
-  border: none;
-  color: rgba(255, 235, 215, 0.7);
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
-}
-
-.app-form-button:hover {
-  color: rgba(255, 175, 95, 0.815);
-}
-
-
-
-@media screen and (max-width: 520px) {
-  .screen-body {
-    flex-direction: column;
-  }
-
-  .screen-body-item.left {
-    margin-bottom: 30px;
-  }
-
-  .app-title {
-    flex-direction: row;
-  }
-
-  .app-title span {
-    margin-right: 12px;
-  }
-
-  .app-title:after {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .screen-body {
-    padding: 40px;
-  }
-
-  .screen-body-item {
-    padding: 0;
-  }
 }
