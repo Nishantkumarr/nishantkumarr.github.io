@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant Kumar - Java Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .profile-info h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-info .title {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #667eea;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .project-item:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateX(10px);
+        }
+
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title, .project-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .company, .project-subtitle {
+            color: #667eea;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .duration {
+            color: #666;
+            font-style: italic;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .achievements li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .photography-section {
+            text-align: center;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .photo-placeholder {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .photo-placeholder:hover::before {
+            left: 100%;
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-caption {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .accomplishment {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .job-header, .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element" style="top: 10%; left: 10%; animation-delay: 0s;"><i class="fas fa-code"></i></div>
+        <div class="floating-element" style="top: 20%; right: 15%; animation-delay: 2s;"><i class="fas fa-database"></i></div>
+        <div class="floating-element" style="bottom: 30%; left: 20%; animation-delay: 4s;"><i class="fas fa-server"></i></div>
+        <div class="floating-element" style="bottom: 20%; right: 10%; animation-delay: 1s;"><i class="fas fa-laptop-code"></i></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h1>Nishant Kumar</h1>
+                    <div class="title">Java Developer • 3+ Years Experience</div>
+                    <div class="contact-info">
+                        <a href="mailto:menishantkumarr@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            menishantkumarr@gmail.com
+                        </a>
+                        <a href="tel:+919958694573" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            +91-9958694573
+                        </a>
+                        <a href="#" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            nishantkumarrr
+                        </a>
+                        <a href="#" class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            Nishantkumarr
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Experience Section -->
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">Newgen Software</div>
+                        <div style="color: #666; margin-top: 5px;">Noida, India</div>
+                    </div>
+                    <div class="duration">June 2022 – Present</div>
+                </div>
+                <ul class="achievements">
+                    <li>Led the design and development of scalable backend components for a core insurance module client, with a focus on billing workflows, premium computation, and compliance automation.</li>
+                    <li>Orchestrated User Acceptance Testing (UAT) cycles and collaborated with QA and product teams to address critical bugs, resulting in a 60% reduction in defect rates and successful client sign-off.</li>
+                    <li>Engineered a secure document watermarking system for a leading bank's digital onboarding platform, integrated via RESTful APIs.</li>
+                    <li>Built and delivered a configurable Account Opening Accelerator designed for rapid integration and deployment across Middle East banking partners ensuring adherence to regional compliance and improving go-to-market efficiency.</li>
+                    <li>Worked in Agile development environments, collaborating with cross-functional teams to deliver high-performance enterprise applications using Java, Spring Boot, Microservices, and Hibernate.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Account Opening Accelerator IN/ME</div>
+                        <div class="project-subtitle">Digital Banking Solution</div>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Developed and delivered Account Opening Accelerator for Indian and Middle East using Newgen products, enabling end-to-end digital onboarding with DKYC, API-based identity verification, deduplication checks, and CIF/account creation.</li>
+                    <li>Built dynamic workflows for individual and joint accounts, and implemented modules like Account Review and Query Handling for efficient query escalation and resolution within the process.</li>
+                    <li>Integrated with multiple internal and external APIs, ensuring seamless data exchange, regulatory compliance, and automation of critical steps across the account opening journey.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Group Life and Renewal Services Module</div>
+                        <div class="project-subtitle">Insurance Management System</div>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Built Group Life and Renewal Services solution for a Philippines-based insurance provider using Newgen BPM, automating policy onboarding, account renewal, and endorsement workflows.</li>
+                    <li>Developed logic to ingest user sheets containing insured members and parameters, dynamically generating workitems and routing them through custom screening logic based on business rules.</li>
+                    <li>Wrote optimized SQL procedures for premium calculations and renewal eligibility, enabling automated group account renewals by processing input sheets and applying predefined conditions—reducing manual intervention and improving backend efficiency.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spring</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Spring Cloud</span>
+                        <span class="skill-tag">Hibernate</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Design Patterns</span>
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">Microservices</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photography Section -->
+        <section class="section photography-section">
+            <h2><i class="fas fa-camera"></i> Photography</h2>
+            <p style="color: #666; margin-bottom: 30px;">Capturing moments and exploring creativity through the lens</p>
+            <div class="photo-gallery">
+                <div class="photo-placeholder">
+                    <i class="fas fa-mountain"></i>
+                    <div class="photo-caption">Landscape</div>
+                </div>
+                <div class="photo-placeholder">
+                    <i class="fas fa-city"></i>
+                    <div class="photo-caption">Urban</div>
+                </div>
+                <div class="photo-placeholder">
+                    <i class="fas fa-portrait"></i>
+                    <div class="photo-caption">Portrait</div>
+                </div>
+                <div class="photo-placeholder">
+                    <i class="fas fa-leaf"></i>
+                    <div class="photo-caption">Nature</div>
+                </div>
+                <div class="photo-placeholder">
+                    <i class="fas fa-camera-retro"></i>
+                    <div class="photo-caption">Street</div>
+                </div>
+                <div class="photo-placeholder">
+                    <i class="fas fa-sunset"></i>
+                    <div class="photo-caption">Golden Hour</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="education-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">BTech in Computer Science</div>
+                        <div class="company">Guru Gobind Singh Indraprastha University</div>
+                    </div>
+                    <div class="duration">Aug 2018 – June 2022</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">
+                    <strong>Coursework:</strong> Data Structures, Algorithms Analysis, Database Management Systems, Software Methodology, Object-Oriented Programming
+                </div>
+            </div>
+        </section>
+
+        <!-- Accomplishments Section -->
+        <section class="section">
+            <h2><i class="fas fa-trophy"></i> Accomplishments</h2>
+            <div class="accomplishment">
+                <i class="fas fa-award" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                <div>Awarded a High Five Award for perseverance during the project's UAT Phase</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add click effect to photo placeholders
+            document.querySelectorAll('.photo-placeholder').forEach(photo => {
+                photo.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.05)';
+                    }, 100);
+                });
+            });
+
+            // Profile image click effect
+            document.querySelector('.profile-image').addEventListener('click', function() {
+                this.style.transform = 'scale(0.9) rotate(-5deg)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05) rotate(5deg)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
